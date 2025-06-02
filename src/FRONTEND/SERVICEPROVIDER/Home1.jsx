@@ -14,7 +14,7 @@ const Home1 = () => {
     <br /><br />
       <div className="fade-in d-flex justify-content-center">
         <img
-          src="public/6424688.webp"
+          src="client/public/6424688.webp"
           alt="Kitchen Appliances"
           className="img-fluid rounded"
           style={{ width: "65%", height: "50%", borderRadius: "15px" }}
