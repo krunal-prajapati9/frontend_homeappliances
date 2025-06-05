@@ -14,7 +14,7 @@ const Home1 = () => {
     <br /><br />
       <div className="fade-in d-flex justify-content-center">
         <img
-          src="client/public/6424688.webp"
+          src="6424688.webp"
           alt="Kitchen Appliances"
           className="img-fluid rounded"
           style={{ width: "65%", height: "50%", borderRadius: "15px" }}
@@ -36,7 +36,7 @@ const Home1 = () => {
             <div className="card h-100 border-0">
               <div className="d-flex justify-content-center align-items-center">
                 <img
-                  src="public/1721238945-8006.avif"
+                  src="1721238945-8006.avif"
                   className="card-img-top"
                   alt="New Electronic Equipment"
                   style={{ width: "80%", height: "auto", borderRadius: "15px" }}
@@ -55,7 +55,7 @@ const Home1 = () => {
             <div className="card h-100 border-0">
               <div className="d-flex justify-content-center align-items-center">
                 <img
-                  src="public/DALL·E 2025-02-21 22.10.42 - A professional service technician for home appliances, wearing a blue uniform with a tool belt, repairing a washing machine in a modern home setting. .webp"
+                  src="DALL·E 2025-02-21 22.10.42 - A professional service technician for home appliances, wearing a blue uniform with a tool belt, repairing a washing machine in a modern home setting. .webp"
                   className="card-img-top"
                   alt="Repair Electronics Equipment"
                   style={{ width: "60%", height: "auto", borderRadius: "15px" }}

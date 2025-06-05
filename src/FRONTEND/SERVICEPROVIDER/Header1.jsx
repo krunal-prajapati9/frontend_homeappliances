@@ -20,7 +20,7 @@ const Header1 = () => {
           >
            
            <Link to={"/serviceproviderdash"}><img
-              src="public/Untitled design.png"
+              src="Untitled design.png"
               alt="logo"
               height="auto"
               className="me-3"
