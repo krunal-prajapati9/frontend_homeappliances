@@ -8,43 +8,42 @@ const ServiceProviderList = () => {
 
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-useEffect(() => {
-  axios
-    .get(`${API_BASE_URL}/serviceproviderslist`) // Adjusted API endpoint
-    .then((response) => setServiceProviders(response.data))
-    .catch((error) =>
-      console.error("Error fetching service providers:", error)
-    );
-}, []);
-
-const deleteServiceProvider = async (serviceProviderId) => {
-  if (!serviceProviderId) {
-    console.error("Invalid service provider ID");
-    return;
-  }
-
-  if (
-    window.confirm("Are you sure? You want to delete this Service Provider?")
-  ) {
-    try {
-      await axios.delete(
-        `${API_BASE_URL}/serviceprovider/${serviceProviderId}`
+  useEffect(() => {
+    axios
+      .get(`${API_BASE_URL}/serviceproviderslist`) // Adjusted API endpoint
+      .then((response) => setServiceProviders(response.data))
+      .catch((error) =>
+        console.error("Error fetching service providers:", error)
       );
+  }, []);
 
-      setServiceProviders((prev) =>
-        prev.filter(
-          (provider) => provider.serviceprovider_id !== serviceProviderId
-        )
-      );
-
-      alert("Service Provider Deleted Successfully!");
-    } catch (error) {
-      console.error("Error deleting service provider:", error);
-      alert("An error occurred while deleting the service provider.");
+  const deleteServiceProvider = async (serviceProviderId) => {
+    if (!serviceProviderId) {
+      console.error("Invalid service provider ID");
+      return;
     }
-  }
-};
 
+    if (
+      window.confirm("Are you sure? You want to delete this Service Provider?")
+    ) {
+      try {
+        await axios.delete(
+          `${API_BASE_URL}/serviceprovider/${serviceProviderId}`
+        );
+
+        setServiceProviders((prev) =>
+          prev.filter(
+            (provider) => provider.serviceprovider_id !== serviceProviderId
+          )
+        );
+
+        alert("Service Provider Deleted Successfully!");
+      } catch (error) {
+        console.error("Error deleting service provider:", error);
+        alert("An error occurred while deleting the service provider.");
+      }
+    }
+  };
 
   return (
     <>

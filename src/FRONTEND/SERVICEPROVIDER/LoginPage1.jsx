@@ -7,7 +7,7 @@ const Serviceproviderlogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState(""); 
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,15 +18,14 @@ const Serviceproviderlogin = () => {
     }
     setError("");
 
-   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-try {
-  const res = await fetch(`${API_BASE_URL}/ServiceProviderLogin`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
-  });
-  
+    try {
+      const res = await fetch(`${API_BASE_URL}/ServiceProviderLogin`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
       const data = await res.json();
       if (data.success) {
@@ -34,7 +33,7 @@ try {
         localStorage.setItem("authToken", data.token);
         localStorage.setItem("userType", "serviceProvider");
         localStorage.setItem("serviceprovider_id", data.serviceprovider_id); // Store serviceprovider_id
-        
+
         navigate("/serviceproviderdash");
       } else {
         alert("Invalid credentials. Please try again.");
@@ -54,11 +53,17 @@ try {
       <div className="content">
         <div style={{ textAlign: "center", marginTop: "10px" }}>
           <h1
-            style={{ fontSize: "32px", fontWeight: "bold", color: "black", transition: "0.3s" }}
+            style={{
+              fontSize: "32px",
+              fontWeight: "bold",
+              color: "black",
+              transition: "0.3s",
+            }}
             onMouseEnter={(e) => (e.target.style.color = "blue")}
             onMouseLeave={(e) => (e.target.style.color = "black")}
           >
-            Welcome Back, <span style={{ color: "blue" }}>Service Provider</span>.
+            Welcome Back,{" "}
+            <span style={{ color: "blue" }}>Service Provider</span>.
           </h1>
           <h4
             style={{ fontSize: "18px", color: "gray", transition: "0.3s" }}
@@ -70,7 +75,7 @@ try {
         </div>
       </div>
       <div className="center-container">
-        <div className="login-card" style={{height:"500px"}}>
+        <div className="login-card" style={{ height: "500px" }}>
           <h1 className="title">Login</h1>
           {error && <div className="error">{error}</div>}
           <form onSubmit={handleSubmit}>
@@ -105,10 +110,13 @@ try {
                 </button>
               </div>
             </div>
-            <p style={{ marginTop: '10px' }}>
-              Create Account..<Link to="/registrationpage">Create Account here</Link>
-            </p>  
-            <button type="submit" className="login-button">Login</button>
+            <p style={{ marginTop: "10px" }}>
+              Create Account..
+              <Link to="/registrationpage">Create Account here</Link>
+            </p>
+            <button type="submit" className="login-button">
+              Login
+            </button>
           </form>
           <br />
         </div>

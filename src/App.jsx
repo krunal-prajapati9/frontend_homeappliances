@@ -76,7 +76,7 @@ function App() {
       <Routes>
         {/* <Route path="/AdminDashboard" element={<Admindashboard />} /> */}
         <Route path="/home" element={<Home />} />
-        <Route path="Adminpenal" element={<Loginpage />} />
+        <Route path="/Adminpenal" element={<Loginpage />} />
         {/* private route for authentication  */}
         <Route
           path="/AdminDashboard"

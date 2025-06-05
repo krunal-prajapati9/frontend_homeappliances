@@ -34,7 +34,7 @@ function CusHeader({ cartCount = 0 }) {
             <Link to={"/"}>
               {" "}
               <img
-                src="public/Untitled design.png"
+                src="public\Untitled design.png"
                 alt="logo"
                 className="me-3"
                 style={{ width: "250px", marginLeft: "25px" }}
