@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Style/Loginpage.css";
 import { useNavigate, Link } from "react-router-dom";
 import Header1 from "./Header1";
-
+import { RiAdminFill } from "react-icons/ri";
 const Serviceproviderlogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -48,6 +48,9 @@ const Serviceproviderlogin = () => {
 
   return (
     <>
+     <Link to="/Adminpenal" title="Go to Admin Panel" style={{ cursor: 'pointer', color: 'blue', fontSize: '30px' }}>
+        <RiAdminFill />
+      </Link>
       {/* <Header1/> */}
       <br />
       <div className="content">
