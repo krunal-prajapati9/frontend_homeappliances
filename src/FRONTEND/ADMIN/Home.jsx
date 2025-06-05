@@ -17,7 +17,7 @@ const Home = () => {
      <Header/>
       <div className="home-container">
         <img
-          src="public/6424688.webp"
+          src="6424688.webp"
           alt="Image"
           className={`custom-image ${fadeIn ? "fade-in-zoom" : ""}`}
         />
